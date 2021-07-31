@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>死灰の个人博客</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/loading.css" />
+<link rel="shortcut icon" href="logo.png" /> 
+<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<!-- <span class="icon fa-gem"></span> -->
+				<img src="images/logo.jpg" alt="" style="width: 100%;height: 100%;overflow: hidden;" class="logo"/>
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1>死灰の个人博客</h1>
+					<!-- <p><script src="https://api.oddfar.com/yl/q.php?c=2004&encode=js"></script></p> -->
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#intro">文章列表</a></li>
+					<li><a href="#work">数据存储</a></li>
+					<li><a href="#addBlog">添加文章</a></li>
+					<li><a href="#about">关于本站</a></li>
+<!-- 					<li><a href="#elements">元素</a></li>
+					<li><a href="#post">测试</a></li> -->
+				</ul>
+			</nav>
+		</header>
+
+	<!-- Main -->
+		<div id="main">
+
+			<!-- Intro -->
+				<article id="intro">
+					<h2 class="major">文章列表</h2>
+					<span class="image main"><img src="images/pic07.jpg" alt="" /></span>
+					<!-- <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p> -->
+					<ul>
+						
+					</ul>
+				</article>
+
+			<!-- Work -->
+				<article id="work">
+					<h2 class="major">数据存储</h2>
+					<h4 class="major">可以在此存取任意键值对</h4>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<label for="datakey">数据键</label>
+								<input type="text" name="datakey" id="datakey" />
+							</div>
+							<div class="field">
+								<label for="datavalue">数据值</label>
+								<textarea name="datavalue" id="datavalue" rows="4"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="button" value="存入" class="primary" onclick="handleData(1)" /></li>
+							<li><input type="button" value="取出" onclick="handleData(0)" /></li>
+						</ul>
+					</form>
+					<div class="column" id="handleDataTips" style="display: none;">
+						<h6>加载中......</h6>
+					    <div class="container animation-6">
+					      <div class="shape shape1"></div>
+					      <div class="shape shape2"></div>
+					      <div class="shape shape3"></div>
+					      <div class="shape shape4"></div>
+					    </div>
+					</div>
+				</article>
+
+			<!-- About -->
+				<article id="about">
+					<h2 class="major">关于</h2>
+					<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+					<h3>我曾七次鄙视自己的灵魂</h3>
+					<p>
+						第一次，当它本可进取时，却故作谦卑；<br/>
+						第二次，当它在空虚时，用爱欲来填充；<br/>
+						第三次，在困难和容易之间，它选择了容易；<br/>
+						第四次，它犯了错，却借由别人也会犯错来宽慰自己；<br/>
+						第五次，它自由软弱，却把它认为是生命的坚韧；<br/>
+						第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br/>
+						第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。<br/>
+					</p>
+				</article>
+
+			<!-- Contact -->
+				<article id="addBlog">
+					<h2 class="major">添加文章</h2>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<label for="title">标题</label>
+								<input type="text" name="title" id="title" />
+							</div>
+							<div class="field">
+								<label for="content">内容</label>
+								<textarea name="content" id="content" rows="8"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="button" value="确定" class="primary" onclick="addBlog()" /></li>
+							<li><input type="reset" value="清空" /></li>
+						</ul>
+					</form>
+					<div class="column" id="addBlogTips" style="display: none;">
+						<h6>添加中......</h6>
+					    <div class="container animation-6">
+					      <div class="shape shape1"></div>
+					      <div class="shape shape2"></div>
+					      <div class="shape shape3"></div>
+					      <div class="shape shape4"></div>
+					    </div>
+					</div>
+				</article>
+
+			<!-- Elements -->
+				<article id="elements">
+					<h2 class="major">Elements</h2>
+
+					<section>
+						<h3 class="major">Text</h3>
+						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+						<hr />
+						<h2>Heading Level 2</h2>
+						<h3>Heading Level 3</h3>
+						<h4>Heading Level 4</h4>
+						<h5>Heading Level 5</h5>
+						<h6>Heading Level 6</h6>
+						<hr />
+						<h4>Blockquote</h4>
+						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+						<h4>Preformatted</h4>
+						<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+print 'Iteration ' + i;
+deck.shuffle();
+i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+					</section>
+
+					<section>
+						<h3 class="major">Lists</h3>
+
+						<h4>Unordered</h4>
+						<ul>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Sagittis adipiscing.</li>
+							<li>Felis enim feugiat.</li>
+						</ul>
+
+						<h4>Alternate</h4>
+						<ul class="alt">
+							<li>Dolor pulvinar etiam.</li>
+							<li>Sagittis adipiscing.</li>
+							<li>Felis enim feugiat.</li>
+						</ul>
+
+						<h4>Ordered</h4>
+						<ol>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Etiam vel felis viverra.</li>
+							<li>Felis enim feugiat.</li>
+							<li>Dolor pulvinar etiam.</li>
+							<li>Etiam vel felis lorem.</li>
+							<li>Felis enim et feugiat.</li>
+						</ol>
+						<h4>Icons</h4>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						</ul>
+
+						<h4>Actions</h4>
+						<ul class="actions">
+							<li><a href="#" class="button primary">Default</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary">Default</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3 class="major">Table</h3>
+						<h4>Default</h4>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+
+						<h4>Alternate</h4>
+						<div class="table-wrapper">
+							<table class="alt">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Item One</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Two</td>
+										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Three</td>
+										<td> Morbi faucibus arcu accumsan lorem.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>Item Four</td>
+										<td>Vitae integer tempus condimentum.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>Item Five</td>
+										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>29.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+
+					<section>
+						<h3 class="major">Buttons</h3>
+						<ul class="actions">
+							<li><a href="#" class="button primary">Primary</a></li>
+							<li><a href="#" class="button">Default</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button">Default</a></li>
+							<li><a href="#" class="button small">Small</a></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+						</ul>
+						<ul class="actions">
+							<li><span class="button primary disabled">Disabled</span></li>
+							<li><span class="button disabled">Disabled</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3 class="major">Form</h3>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<label for="demo-name">Name</label>
+									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+								</div>
+								<div class="field half">
+									<label for="demo-email">Email</label>
+									<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@abc.com" />
+								</div>
+								<div class="field">
+									<label for="demo-category">Category</label>
+									<select name="demo-category" id="demo-category">
+										<option value="">-</option>
+										<option value="1">Manufacturing</option>
+										<option value="1">Shipping</option>
+										<option value="1">Administration</option>
+										<option value="1">Human Resources</option>
+									</select>
+								</div>
+								<div class="field half">
+									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+									<label for="demo-priority-low">Low</label>
+								</div>
+								<div class="field half">
+									<input type="radio" id="demo-priority-high" name="demo-priority">
+									<label for="demo-priority-high">High</label>
+								</div>
+								<div class="field half">
+									<input type="checkbox" id="demo-copy" name="demo-copy">
+									<label for="demo-copy">Email me a copy</label>
+								</div>
+								<div class="field half">
+									<input type="checkbox" id="demo-human" name="demo-human" checked>
+									<label for="demo-human">Not a robot</label>
+								</div>
+								<div class="field">
+									<label for="demo-message">Message</label>
+									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send Message" class="primary" /></li>
+								<li><input type="reset" value="Reset" /></li>
+							</ul>
+						</form>
+					</section>
+
+				</article>
+
+				<article id="post">
+					<h3 class="major">错误</h3>
+					还没有内容哦~
+				</article>
+
+		</div>
+
+	<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">Copyright &copy; 2021 死灰_5had0w All rights reserved.</p>
+		</footer>
+
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/browser.min.js"></script>
+<script src="js/breakpoints.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/main.js"></script>
+<script src="js/js-conflux-sdk.umd.min.js"></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
