@@ -34,6 +34,7 @@
 					<li><a href="#intro">文章列表</a></li>
 					<li><a href="#work">数据存储</a></li>
 					<!-- <li><a href="#addBlog">添加文章</a></li> -->
+					<li><a href="#portscan">端口扫描</a></li>
 					<li><a href="#xianyuan">修仙游戏</a></li>
 					<li><a href="#about">关于本站</a></li>
 <!-- 					<li><a href="#elements">元素</a></li>  -->
@@ -60,6 +61,35 @@
 					<h2 class="major">测试</h2>
 					<iframe src="https://www.xiaohongshu.com/explore" id="my-iframe"></iframe>
 				</article> -->
+
+				<article id="portscan">
+					<h2 class="major">端口扫描</h2>
+					<h4 class="major">纯 JS 实现的服务器端口扫描</h4>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field">
+								<label for="ip">IP</label>
+								<input name="ip" type="text" value="81.68.117.118" />
+							</div>
+							<div class="field">
+								<label for="port">端口</label>
+								<input name="port" type="text" value="80,888,8080,8888,3306,443,445,139,138,22,21,5555,3389,135,134,5040"/>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="button" value="开始扫描" class="primary" onclick="scan()" /></li>
+						</ul>
+					</form>
+					<ul>
+						<li id="localIP">您的本地 IP :</li>
+						<li id="publicIP">您的公网 IP :</li>
+						<li id="v6IP">您的 IP v6 :</li>
+					</ul>
+					<h4>扫描结果&nbsp;&nbsp;<a onclick="clearPortScan()" style="cursor: pointer;">清空</a></h4> 
+					<textarea id="result" rows="12"></textarea>
+					<br/>
+					<h6>注：代码来自网络，二次修改，以上结果仅供参考。</h6>
+				</article>
 
 			<!-- Work -->
 				<article id="work">
@@ -346,6 +376,7 @@
 <script src="js/main.js"></script>
 <script src="js/js-conflux-sdk.umd.min.js"></script>
 <script src="js/index.js"></script>
+<script src="js/portscan.js"></script>
 <script src="xianyuan/js/vue.js"></script>
 <script src="xianyuan/js/index.js"></script>
 
