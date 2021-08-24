@@ -5,3 +5,30 @@ ul li {
 #footer a {
 	border-bottom: none !important;
 }
+
+#result {
+    width: 100%;
+    height: 20rem;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 1rem;
+    overflow-y: scroll;
+    white-space: pre-line;
+}
+
+.dot {
+	display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 10px;
+}
+
+.greenBg {
+	background: green;
+}
+
+.redBg {
+	background: red;
+}

@@ -77,12 +77,17 @@ GetAddr(function (ip) {
 });
 
 function out(target, port, status) {
-    var tmp = $("#result").val()
-    var tmpstr = ip + ":" + port + ":" + status
-    if(!tmp){
-        $("#result").val(tmpstr)
+    var tmp = $("#result").html()
+    var tmpstr = ip + ":" + port + "&nbsp;&nbsp;" + status + '&nbsp;&nbsp;';
+    if(status == 'open'){
+        tmpstr += '<span class="dot greenBg"></span>';
     }else{
-        $("#result").val(tmp + "\n" + tmpstr)
+        tmpstr += '<span class="dot redBg"></span>';
+    }
+    if(!tmp){
+        $("#result").html(tmpstr)
+    }else{
+        $("#result").html(tmp + "\n" + tmpstr)
     }
 }
 
@@ -128,5 +133,5 @@ function scan() {
 }
 
 function clearPortScan(){
-    $("#result").val('');
+    $("#result").html('');
 }
