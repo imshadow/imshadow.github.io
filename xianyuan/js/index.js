@@ -42,6 +42,3 @@ var app = new Vue({
         }        
     }
 })
-
-console.log('或许当你真正可以拥有的时候，你却早已不想要了。');
-console.log('写文章入口:'+window.location.origin+'#addBlog');

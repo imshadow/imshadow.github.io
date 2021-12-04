@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>
+        网页键盘
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .keyboard {
+            display:
+                grid;
+            grid-template-columns: repeat(30, 2.2vw);
+            grid-template-rows: repeat(5, 6vw);
+            grid-gap: 0.95vw;
+            background: #c2ccdb;
+            padding: 1.727272727272727vw;
+            border-radius: 1.266666666666667vw;
+            background: #d8dee8;
+            box-shadow: -0.316666666666667vw -0.316666666666667vw 0.95vw #f3f5f8, 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #c2ccdb;
+        }
+
+        .keyboard .key {
+            border-radius: 0.76vw;
+            grid-column: auto/span 2;
+            width: 100%;
+            height: 100%;
+            padding: 0.475vw;
+            font-size: 1.9vw;
+            display: grid;
+            align-items: center;
+            color: #8a94a4;
+            justify-content:
+                center;
+            cursor: pointer;
+            background: #d8dee8;
+            box-shadow: -0.316666666666667vw -0.316666666666667vw 0.95vw #f3f5f8, 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #c2ccdb;
+            transition: all 100ms cubic-bezier(0.09, 0.32,
+                    0.34, 2);
+            user-select: none;
+        }
+
+        /*.keyboard .key:hover,*/
+        .keyboard .key.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #f6f8fa, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #c2ccdb;
+            color: #fff;
+            text-shadow:
+                0 0 10px #f7f9fa, 0 0 15px #f7f9fa, 0 0 20px #f7f9fa;
+        }
+
+        .keyboard .key.dotted {
+            position: relative;
+        }
+
+        .keyboard .key.dotted::before {
+            content: '_';
+            font-weight:
+                bold;
+            color: #b5c0d2;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform:
+                translate(-50%, -50%);
+        }
+
+        .keyboard .key.esc {
+            background: #ed4c67;
+            color:
+                #fbdbe1;
+        }
+
+        /*.keyboard .key.esc:hover,*/
+        .keyboard .key.esc.pressed {
+            transform:
+                perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #f38e9f, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #c71432;
+            color: #fff;
+            text-shadow:
+                0 0 10px #f59eac, 0 0 15px #f59eac, 0 0 20px #f59eac;
+        }
+
+        .keyboard .key.back {
+            background: #d63031;
+            color: #f7d6d6;
+        }
+
+        /*.keyboard .key.back:hover,*/
+        .keyboard .key.back.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow:
+                inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #e57c7d, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #991e1f;
+            color: #fff;
+            text-shadow: 0 0 10px #e88f90, 0 0 15px #e88f90,
+                0 0 20px #e88f90;
+        }
+
+        .keyboard .key.shift {
+            background: #1e90ff;
+            color:
+                #d2e9ff;
+        }
+
+        /*.keyboard .key.shift:hover,*/
+        .keyboard .key.shift.pressed {
+            transform:
+                perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #71b9ff, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #0065c8;
+            color: #fff;
+            text-shadow:
+                0 0 10px #85c3ff, 0 0 15px #85c3ff, 0 0 20px #85c3ff;
+        }
+
+        .keyboard .key.control {
+            background: #be2edd;
+            color: #f2d5f8;
+        }
+
+        /*.keyboard .key.control:hover,*/
+        .keyboard .key.control.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #d57be9, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #891aa1;
+            color: #fff;
+            text-shadow: 0 0 10px #db8eec, 0 0 15px #db8eec,
+                0 0 20px #db8eec;
+        }
+
+        .keyboard .key.win {
+            background: #f7b731;
+            color: #fdf1d6;
+        }
+
+        /*.keyboard .key.win:hover,*/
+        .keyboard .key.win.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #fad17d, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #c78908;
+            color: #fff;
+            text-shadow: 0 0 10px #fad890,
+                0 0 15px #fad890, 0 0 20px #fad890;
+        }
+
+        .keyboard .key.alt {
+            background:
+                #5352ed;
+            color: #dddcfb;
+        }
+
+        /*.keyboard .key.alt:hover,*/
+        .keyboard .key.alt.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #9291f3, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #1615ca;
+            color: #fff;
+            text-shadow:
+                0 0 10px #a2a1f5, 0 0 15px #a2a1f5, 0 0 20px #a2a1f5;
+        }
+
+        .keyboard .key.fn {
+            background: #26de81;
+            color: #d4f8e6;
+        }
+
+        /*.keyboard .key.fn:hover,*/
+        .keyboard .key.fn.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow:
+                inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #76eaaf, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #189e5a;
+            color: #fff;
+            text-shadow: 0 0 10px #8aedbb, 0 0 15px #8aedbb,
+                0 0 20px #8aedbb;
+        }
+
+        .keyboard .key.cap {
+            background: #ee5a24;
+            color: #fcded3;
+            position: relative;
+        }
+
+        /*.keyboard .key.cap:hover,*/
+        .keyboard .key.cap.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #f49675, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #b23a0e;
+            color: #fff;
+            text-shadow:
+                0 0 10px #f6a588, 0 0 15px #f6a588, 0 0 20px #f6a588;
+        }
+
+        .keyboard .key.cap::before {
+            content: '';
+            position: absolute;
+            width: 0.5vw;
+            height: 0.5vw;
+            background:
+                #f6ac91;
+            top: 1vw;
+            right: 1vw;
+            border-radius: 50%;
+        }
+
+        .keyboard .key.cap.on::before {
+            background: #fbded3;
+            box-shadow: 0 0 0.5vw 0.2vw rgba(255, 255, 255,
+                    0.8);
+        }
+
+        .keyboard .key.tab {
+            background: #12cbc4;
+            color: #cafaf8;
+        }
+
+        /*.keyboard .key.tab:hover,*/
+        .keyboard .key.tab.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #5aede7, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #0d8e89;
+            color: #fff;
+            text-shadow: 0 0 10px #72f0eb,
+                0 0 15px #72f0eb, 0 0 20px #72f0eb;
+        }
+
+        .keyboard .key.enter {
+            background:
+                #fdcb6e;
+            color: #fff5e2;
+        }
+
+        /*.keyboard .key.enter:hover,*/
+        .keyboard .key.enter.pressed {
+            transform: perspective(300px) scale(0.97);
+            box-shadow: inset -0.316666666666667vw -0.316666666666667vw 0.95vw -0.158333333333333vw #fddea3, inset 0.316666666666667vw 0.316666666666667vw 0.633333333333333vw #fba403;
+            color: #fff;
+            text-shadow:
+                0 0 10px #fde2b0, 0 0 15px #fde2b0, 0 0 20px #fde2b0;
+        }
+
+        .keyboard .key.s2 {
+            font-size: 1.727272727272727vw;
+            grid-column: auto/span 2;
+        }
+
+        .keyboard .key.s3 {
+            font-size: 1.727272727272727vw;
+            grid-column: auto/span 3;
+        }
+
+        .keyboard .key.s4 {
+            font-size: 1.727272727272727vw;
+            grid-column: auto/span 4;
+        }
+
+        .keyboard .key.s5 {
+            font-size: 1.727272727272727vw;
+            grid-column: auto/span 5;
+        }
+
+        .keyboard .key.s6 {
+            font-size: 1.727272727272727vw;
+            grid-column: auto/span 6;
+        }
+
+        .keyboard .key.s12 {
+            font-size: 1.727272727272727vw;
+            grid-column: auto/span 12;
+        }
+
+        .keyboard .key[on-shift] {
+            font-size: 1.461538461538461vw;
+            justify-items:
+                center;
+        }
+
+        .keyboard .key[on-shift]::before {
+            content: attr(on-shift);
+            align-items:
+                end;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family:
+                'Sen', sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(circle at top left, #d8dee8 30%, #c2ccdb);
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="keyboard">
+        <div class="key s2 esc" data-key="💀" data-code="27">
+            💀
+        </div>
+        <div class="key" on-shift="!" data-key="1" data-code="49">
+            1
+        </div>
+        <div class="key" on-shift="@" data-key="2" data-code="50">
+            2
+        </div>
+        <div class="key" on-shift="#" data-key="3" data-code="51">
+            3
+        </div>
+        <div class="key" on-shift="$" data-key="4" data-code="52">
+            4
+        </div>
+        <div class="key" on-shift="%" data-key="5" data-code="53">
+            5
+        </div>
+        <div class="key" on-shift="^" data-key="6" data-code="54">
+            6
+        </div>
+        <div class="key" on-shift="&amp;" data-key="7" data-code="55">
+            7
+        </div>
+        <div class="key" on-shift="*" data-key="8" data-code="56">
+            8
+        </div>
+        <div class="key" on-shift="(" data-key="9" data-code="57">
+            9
+        </div>
+        <div class="key" on-shift=")" data-key="0" data-code="48">
+            0
+        </div>
+        <div class="key sub" on-shift="_" data-key="-" data-code="189">
+            -
+        </div>
+        <div class="key add" on-shift="+" data-key="=" data-code="187">
+            =
+        </div>
+        <div class="key s4 back" data-key="😅" data-code="8">
+            😅
+        </div>
+        <div class="key s3 tab" data-key="📑" data-code="9">
+            📑
+        </div>
+        <div class="key" data-key="Q" data-code="81">
+            Q
+        </div>
+        <div class="key" data-key="W" data-code="87">
+            W
+        </div>
+        <div class="key" data-key="E" data-code="69">
+            E
+        </div>
+        <div class="key" data-key="R" data-code="82">
+            R
+        </div>
+        <div class="key" data-key="T" data-code="84">
+            T
+        </div>
+        <div class="key" data-key="Y" data-code="89">
+            Y
+        </div>
+        <div class="key" data-key="U" data-code="85">
+            U
+        </div>
+        <div class="key" data-key="I" data-code="73">
+            I
+        </div>
+        <div class="key" data-key="O" data-code="79">
+            O
+        </div>
+        <div class="key" data-key="P" data-code="80">
+            P
+        </div>
+        <div class="key openbracket" on-shift="{" data-key="[" data-code="219">
+            [
+        </div>
+        <div class="key closebracket" on-shift="}" data-key="]" data-code="221">
+            ]
+        </div>
+        <div class="key s3 pipe" on-shift="|" data-key="\" data-code="220">
+            \
+        </div>
+        <div class="key s4 cap" data-key="🔓" data-code="20">
+            🔓
+        </div>
+        <div class="key" data-key="A" data-code="65">
+            A
+        </div>
+        <div class="key" data-key="S" data-code="83">
+            S
+        </div>
+        <div class="key" data-key="D" data-code="68">
+            D
+        </div>
+        <div class="key dotted" data-key="F" data-code="70">
+            F
+        </div>
+        <div class="key" data-key="G" data-code="71">
+            G
+        </div>
+        <div class="key" data-key="H" data-code="72">
+            H
+        </div>
+        <div class="key dotted" data-key="J" data-code="74">
+            J
+        </div>
+        <div class="key" data-key="K" data-code="75">
+            K
+        </div>
+        <div class="key" data-key="L" data-code="76">
+            L
+        </div>
+        <div class="key semi" on-shift=":" data-key=";" data-code="186">
+            ;
+        </div>
+        <div class="key comma" on-shift="&quot;" data-key="," data-code="222">
+            ,
+        </div>
+        <div class="key s4 enter" data-key="😤" data-code="13">
+            😤
+        </div>
+        <div class="key s5 shift" data-key="💪" data-code="16">
+            💪🙋‍♂️
+        </div>
+        <div class="key" data-key="Z" data-code="90">
+            Z
+        </div>
+        <div class="key" data-key="X" data-code="88">
+            X
+        </div>
+        <div class="key" data-key="C" data-code="67">
+            C
+        </div>
+        <div class="key" data-key="V" data-code="86">
+            V
+        </div>
+        <div class="key" data-key="B" data-code="66">
+            B
+        </div>
+        <div class="key" data-key="N" data-code="78">
+            N
+        </div>
+        <div class="key" data-key="M" data-code="77">
+            M
+        </div>
+        <div class="key openangular" on-shift="&lt;" data-key="," data-code="188">
+            ,
+        </div>
+        <div class="key closeangular" on-shift="&gt;" data-key="." data-code="190">
+            .
+        </div>
+        <div class="key slash" on-shift="?" data-key="/" data-code="191">
+            /
+        </div>
+        <div class="key s5 shift up" data-key="💪" data-code="16|16">
+            💪
+        </div>
+        <div class="key s3 control" data-key="☕" data-code="17">
+            ☕🙋‍♂️
+        </div>
+        <div class="key s3 win" data-key="🤩" data-code="91">
+            💻
+        </div>
+        <div class="key s3 alt" data-key="⭐️" data-code="18">
+            ⭐️
+        </div>
+        <div class="key s12 space" data-key="" data-code="32">
+        </div>
+        <div class="key s3 alt" data-key="⭐️" data-code="17|17">
+            ☕
+        </div>
+        <div class="key s2 fn left" data-key="🌈" id="connect-status">
+            🌧️
+        </div>
+        <div class="key s2 fn down" data-key="👨‍💻" onclick="connect()" id="connect-key">
+            👨‍💻
+        </div>
+        <div class="key s2 control right" data-key="☕" data-code="17|16">
+            ⌨️
+        </div>
+    </div>
+    <script>
+
+        let ws;
+        var isCtrl = false;
+        var isShift = false;
+        var isAlt = false;
+        var isCaps = false;
+
+        keyHash = {
+            8: ".back",
+            9: ".tab",
+            13: ".enter",
+            16: ".shift",
+            17: ".control",
+            18: ".alt",
+            20: ".cap",
+            27: ".esc",
+            32: ".space",
+            37: ".left",
+            38: ".up",
+            39: ".right",
+            40: ".down",
+            186: ".semi",
+            187: '.add',
+            189: '.sub',
+            222: ".comma",
+            219: ".openbracket",
+            221: ".closebracket",
+            220: ".pipe",
+            188: ".openangular",
+            190: ".closeangular",
+            191: ".slash",
+            91: '.win'
+        };
+
+        const cap = document.querySelector('.cap');
+
+        function checkCaps() {
+            if (event.getModifierState("CapsLock")) {
+                cap.classList.add('on')
+            } else {
+                cap.classList.remove('on')
+            }
+        }
+
+        const handleKeyDown = (e) => {
+            // checkCaps() 
+            // let target = keyHash[e.keyCode];
+            // if(!target) target = `.key[data - key = "${String.fromCharCode(e.keyCode)}"]`;
+            // const key = document.querySelector(target);
+            // key && key.classList.toggle("pressed");
+		};
+
+        function unPress(e) {
+            //console.log(this.classList);
+            if (e.propertyName === "transform") this.classList.remove("pressed");
+        }
+
+        window.addEventListener("keydown", handleKeyDown);
+        const keys = document.querySelectorAll(".key");
+
+        keys.forEach((k) => {
+            k.onclick = function(e){
+                var obj = e.target;
+                let keyCode = obj.dataset.code;
+                if(!keyCode){
+                    return;
+                }
+                //Shift
+                if(keyCode == 16){
+                    isShift = !isShift;
+                    if(isShift){
+                        obj.classList.add("pressed");
+                    }else{
+                        obj.classList.remove("pressed");
+                    }
+                }
+                //Ctrl
+                else if(keyCode == 17){
+                    isCtrl = !isCtrl;
+                    if(isCtrl){
+                        obj.classList.add("pressed");
+                    }else{
+                        obj.classList.remove("pressed");
+                    }
+                }
+                //Alt
+                else if(keyCode == 18){
+                    isAlt = !isAlt;
+                    if(isAlt){
+                        obj.classList.add("pressed");
+                    }else{
+                        obj.classList.remove("pressed");
+                    }
+                }
+                else{
+                    //Caps
+                    if(keyCode == 20){
+                        isCaps = !isCaps;
+                        if(isCaps){
+                            obj.classList.add("pressed");
+                            obj.classList.add("on");
+                        }else{
+                            obj.classList.remove("pressed");
+                            obj.classList.remove("on");
+                        }
+                    }else{
+                        obj.classList.add("pressed");
+                        setTimeout(function(){
+                            obj.classList.remove("pressed");
+                        },100);
+                    }
+                    //双Ctrl和双Shift单独处理
+                    if(keyCode == '16|16' || keyCode == '17|17' || keyCode == '17|16' || keyCode == 20){
+                        if(keyCode == '16|16'){
+                            keyCode = '16';
+                        }
+                        if(keyCode == '17|17'){
+                            keyCode = '17';
+                        }
+                    }else{
+                        //如果按下了ctrl
+                        if(isCtrl){
+                            keyCode = "17|" + keyCode;
+                        }
+                        //如果按下了Shift
+                        if(isShift){
+                            keyCode = "16|" + keyCode;
+                        }
+                        //如果按下了Alt
+                        if(isAlt){
+                            keyCode = "18|" + keyCode;
+                        }
+                    }
+                    console.log(keyCode);
+                    if(ws){
+                        ws.send(keyCode);
+                    }
+                }
+            } 
+        });
+
+        //keys.forEach((k) => k.addEventListener("transitionend", unPress));
+        //连接
+        document.getElementById('connect-key').onclick = function connect(){
+            var ip = prompt("请输入电脑IP","192.168.252.50");
+            //console.log(ip);
+            ws = new WebSocket("ws://" + ip + ":16666");
+            ws.onopen = function(){
+                document.getElementById('connect-status').innerHTML = '🌈';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
