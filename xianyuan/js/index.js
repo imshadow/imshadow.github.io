@@ -6,7 +6,7 @@
 var app = new Vue({
     el: '#xy-box',
     data: {
-        index: 0, //当前页 0:起始页 1:首页 2:历练
+        index: 2, //当前页 0:起始页 1:首页 2:历练
         message: 'Hello Vue!',
         canAttack: true, //是否能攻击，攻击有cd时间
         attackCdTimer: null //攻击cd刷新定时器
