@@ -4,13 +4,13 @@
 <title>灰尘の个人博客</title>
 <meta charset="utf-8" />
 <meta name="keywords" content="灰尘">
-<meta name="description" content="难道看我失魂落魄，你竟然心动？">
+<meta name="description" content="灰尘的个人博客">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="css/main.css" />
 <link rel="stylesheet" href="css/index.css" />
 <link rel="stylesheet" href="css/loading.css" />
 <link rel="stylesheet" href="xianyuan/css/index.css" />
-<link rel="shortcut icon" href="/images/logo.jpeg" /> 
+<link rel="shortcut icon" href="/images/logo.jpg" />
 <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
 <link rel="stylesheet" href="//at.alicdn.com/t/font_567050_khj092ievrf.css"/>
 </head>
@@ -23,7 +23,7 @@
 		<header id="header">
 			<div class="logo">
 				<!-- <span class="icon fa-gem"></span> -->
-				<img src="/images/logo.jpeg" alt="" style="width: 100%;height: 100%;overflow: hidden;" class="logo"/>
+				<img src="/images/logo.jpg" alt="" style="width: 100%;height: 100%;overflow: hidden;" class="logo"/>
 			</div>
 			<div class="content">
 				<div class="inner">
@@ -36,13 +36,13 @@
 					<li><a href="#intro">文章列表</a></li>
 					<li><a href="#work">数据存储</a></li>
 					<!-- <li><a href="#addBlog">添加文章</a></li> -->
-					<li>
-						<a style="display: flex;flex-direction: column;justify-content: center">
-							<iframe frameborder="no" border="0" marginwidth="0" marginheight="0"
-							 src="//music.163.com/outchain/player?type=2&id=1367452194&auto=1&height=32"
-							 style="opacity: 0.5;width: 160px;margin-bottom: 8px;height: 44px;"></iframe>
-						</a>
-					</li>
+<!--					<li>-->
+<!--						<a style="display: flex;flex-direction: column;justify-content: center">-->
+<!--							<iframe frameborder="no" border="0" marginwidth="0" marginheight="0"-->
+<!--							 src="//music.163.com/outchain/player?type=2&id=1367452194&auto=1&height=32"-->
+<!--							 style="opacity: 0.5;width: 160px;margin-bottom: 8px;height: 44px;"></iframe>-->
+<!--						</a>-->
+<!--					</li>-->
 					<!-- <li><a href="#sentence">句子收藏</a></li> -->
 					<!-- <li><a href="http://server.5had0w.com:8888/" target="_blank">网页终端</a></li> -->
 					<!--root pa55w0rd-->
@@ -201,407 +201,9 @@
 					</div>
 				</article>
 
-				<article id="xianyuan">
-					<h3 class="major">仙缘</h3>
-					<h5>一款纯文本网页单机修仙游戏 by:灰尘</h5>
-					<br/>
-					<!--css 统一使用xy作为前缀 -->
-					<div id="xy-box">
-						<!--引导页 start -->
-						<div id="xy-guide" v-show="index == 0">
-							<img id="xy-logo" src="xianyuan/images/logo.png" width="40%" height="auto"/>
-							<br/>
-							<h4>上古时期，凶兽饕餮为祸人间，天下修士群起而攻之，却亦不敌。一时间尸山血海，如同炼狱降世。后有大修行者，名曰云尘仙人，与饕餮大战三天三夜，风云震动，天地变色。云尘仙人不惜以生命为祭，终将饕餮封印，期限千年。为保后世，云尘仙人身陨前，留下仙者之心于人世。而饕餮亦有不甘，将自身煞气，侵染世间角落......</h4>
-							<br/>
-							<a href="javascript:void(0)" class="button primary" v-on:click="index = 1">开始游戏</a>
-							<br/>
-							<h6>正在努力开发中......</h6>
-						</div>
-						<!--引导页 end -->
-						<div id="xy-main" v-show="index != 0" class="fill-width">
-							<!-- 首页 start -->
-							<div id="xy-index" v-show="index == 1">
-								<div id="xy-notice" class="xyi">
-									<i class="iconfont icon-laba"></i>
-									<span> 求仙之路，有你陪伴不孤单！</span>
-								</div>
-								<br/>
-								<div id="xy-player" class="fill-width">
-									<div class="xy-title-bar xyf">
-										<i class="iconfont icon-jichu"></i>&nbsp;&nbsp;基础
-									</div>
-									<br/>
-									<div id="xy-player-info">
-										<div id="xy-player-info-name">
-											<div>
-												<img src="/images/logo.jpeg"/>
-											</div>
-										</div>
-										<div id="xy-player-info-attr">
-											<span>灰尘</span>
-											<span><i class="iconfont icon-xingbie xya"></i>&nbsp;&nbsp;男</span>
-											<span><i class="iconfont icon-huiyuandengji xyb"></i>&nbsp;&nbsp;21级(99/120)</span>
-											<span><i class="iconfont icon-miaoshu xyc"></i>&nbsp;&nbsp;化神</span>
-										</div>
-									</div>
-								</div>
-								<br/>
-								<div id="xy-fight" class="fill-width">
-									<div class="xy-title-bar xye">
-										<i class="iconfont icon-zhandouzuozhan"></i>&nbsp;&nbsp;战斗
-									</div>
-									<br/>
-									<div id="xy-fight-info">
-										<span title="攻击"><i class="iconfont icon-shougongji xyd"></i>&nbsp;&nbsp;100</span>
-										<span title="生命"><i class="iconfont icon-blood xye"></i>&nbsp;&nbsp;200</span>
-										<span title="防御"><i class="iconfont icon-Ddosfangyu xyf"></i>&nbsp;&nbsp;50</span>
-										<span title="暴击"><i class="iconfont icon-shandian xyg"></i>&nbsp;&nbsp;9</span>
-										<span title="闪避"><i class="iconfont icon-ziyuan xyh"></i>&nbsp;&nbsp;2</span>
-									</div>
-								</div>
-								<br/>
-								<div id="xy-equip" class="fill-width">
-									<div class="xy-title-bar xyb">
-										<i class="iconfont icon-zhandouzuozhan icon-zu"></i>&nbsp;&nbsp;装备
-									</div>
-									<br/>
-									<div id="xy-equip-info">
-										<span><i class="iconfont icon-yin xyd"></i>&nbsp;&nbsp;
-											圣 · 仙者封魔印 (+18)
-										</span>
-										<span><i class="iconfont icon-wangzhezhijian-copy xye"></i>&nbsp;&nbsp;
-											嗜血残魂之剑
-										</span>
-										<span><i class="iconfont icon-shangyi- xye"></i>&nbsp;&nbsp;
-											嗜血残魂项链
-										</span>
-										<span><i class="iconfont icon-yifu2 xyf"></i>&nbsp;&nbsp;
-											嗜血残魂战甲
-										</span>
-										<!-- <span><i class="iconfont icon-shouhuan xyg"></i>&nbsp;&nbsp;
-											嗜血残魂护腕
-										</span> -->
-										<span><i class="iconfont icon-jiezhi xyh"></i>&nbsp;&nbsp;
-											嗜血残魂指环
-										</span>
-										<span><i class="iconfont icon-xiezi xye"></i>&nbsp;&nbsp;
-											嗜血残魂战靴
-										</span>
-										<!-- <span><i class="iconfont icon-chibang2 xyf"></i>&nbsp;&nbsp;
-											嗜血残魂之翼
-										</span> -->
-									</div>
-								</div>
-								<br>
-								<div id="xy-level" class="fill-width">
-									<div class="xy-title-bar xyd">
-										<i class="iconfont icon-tubiao-"></i>&nbsp;&nbsp;关卡
-									</div>
-									<br/>
-									<div id="xy-level-list">
-										<h3><a href="javascript:void(0)">历练&nbsp;</a>|<a href="javascript:void(0)">&nbsp;副本(暂未开放)</a></h3>
-										<div id="xy-level-list-experience">
-											<h5>初期获得仙币，装备碎片，法力的地方</h5>
-											<span>死亡沼泽(1级)&nbsp;&nbsp;<a href="javascript:void(0)" v-on:click="goExp(1)">进入</a></span><br/>
-											<span>血色洞窟(5级)&nbsp;&nbsp;<a href="javascript:void(0)" v-on:click="goExp(5)">进入</a></span><br/>
-											<!-- <span>黑暗森林(10级)&nbsp;&nbsp;<a href="javascript:void(0)" v-on:click="goExp(10)">进入</a></span><br/> -->
-										</div>
-										<!-- <div id="xy-level-list-copy">
-											<h5>爆装备，物品的地方</h5>
-											<span>失落之城(15级)&nbsp;&nbsp;<a href="javascript:void(0)">进入</a></span><br/>
-											<span>升仙之地(30级)&nbsp;&nbsp;<a href="javascript:void(0)">进入</a></span><br/>
-											<span>封魔之渊(50级)&nbsp;&nbsp;<a href="javascript:void(0)">进入</a></span><br/>
-										</div> -->
-									</div>
-								</div>
-							</div>
-							<!-- 首页 end -->
-							<!-- 历练 start -->
-							<div id="xy-experience" v-show="index == 2">
-								<h2>历练</h2>
-								<h3>{{currentLevel.name}}</h3>
-								<h4>{{currentLevel.about}}</h4>
-								<h5>{{currentLevel.monsterAbout}}</h5>
-								{{currentLevel.steps[levelCurrentStep]}}
-								<p>
-									<template v-for="(monster,i) in currentMonsters">
-										<span>
-											<span class="monster-info">{{monster.name}}&nbsp;({{monster.life}}/{{monsterTotalLife}})&nbsp;&nbsp;</span>
-											<span class="attack-span" :id="'attack-span-' + i" v-on:click="attack(i)">
-												<span class="attack-bg" :style="{width: attackBgWidthList[i] + 'px'}"></span>
-												<a href="javascript:void(0)" class="attack">攻 击</a>
-											</span>
-										</span>
-										<br/>
-									</template>
-								</p>
-								<div id="xy-experience-show"></div>
-							</div>
-							<!-- 历练 end -->
-							<!-- 底部菜单 start -->
-							<br>
-							<div style="width: -webkit-fill-available;height: 0.1rem;background-color: white;"></div>
-							<br>
-							<div id="xy-menu">
-								<a href="javascript:void(0)" v-on:click="index = 1">首页</a>
-								<a href="javascript:void(0)">签到</a>
-								<a href="javascript:void(0)">图鉴</a>
-								<a href="javascript:void(0)">商店</a>
-								<a href="javascript:void(0)">背包</a>
-								<a href="javascript:void(0)">反馈</a>
-								<a href="javascript:void(0)">敬请期待</a>
-							</div>
-							<!-- 底部菜单 end -->
-						</div>
-					</div>
-					<br/>
-				</article>
-
 				<article id="post">
 					<h3 class="major">错误</h3>
 					<h5 class="time"></h5>
-				</article>
-
-				<!-- Elements -->
-				<article id="elements">
-					<h2 class="major">Elements</h2>
-
-					<section>
-						<h3 class="major">Text</h3>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h4>Blockquote</h4>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h4>Preformatted</h4>
-						<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
-
-					<section>
-						<h3 class="major">Lists</h3>
-
-						<h4>Unordered</h4>
-						<ul>
-							<li>Dolor pulvinar etiam.</li>
-							<li>Sagittis adipiscing.</li>
-							<li>Felis enim feugiat.</li>
-						</ul>
-
-						<h4>Alternate</h4>
-						<ul class="alt">
-							<li>Dolor pulvinar etiam.</li>
-							<li>Sagittis adipiscing.</li>
-							<li>Felis enim feugiat.</li>
-						</ul>
-
-						<h4>Ordered</h4>
-						<ol>
-							<li>Dolor pulvinar etiam.</li>
-							<li>Etiam vel felis viverra.</li>
-							<li>Felis enim feugiat.</li>
-							<li>Dolor pulvinar etiam.</li>
-							<li>Etiam vel felis lorem.</li>
-							<li>Felis enim et feugiat.</li>
-						</ol>
-						<h4>Icons</h4>
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						</ul>
-
-						<h4>Actions</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Default</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary">Default</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-					</section>
-
-					<section>
-						<h3 class="major">Table</h3>
-						<h4>Default</h4>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-
-						<h4>Alternate</h4>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-
-					<section>
-						<h3 class="major">Buttons</h3>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
-
-					<section>
-						<h3 class="major">Form</h3>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half">
-									<label for="demo-name">Name</label>
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-								</div>
-								<div class="field half">
-									<label for="demo-email">Email</label>
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@abc.com" />
-								</div>
-								<div class="field">
-									<label for="demo-category">Category</label>
-									<select name="demo-category" id="demo-category">
-										<option value="">-</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="field half">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="field half">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="field half">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="field half">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="field">
-									<label for="demo-message">Message</label>
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" class="primary" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</form>
-					</section>
-
 				</article>
 
 		</div>
@@ -639,9 +241,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <script src="js/js-conflux-sdk.umd.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/portscan.js"></script>
-<script src="xianyuan/js/vue.js"></script>
-<script src="xianyuan/js/data.js"></script>
-<script src="xianyuan/js/index.js"></script>
 
 </body>
 </html>
